@@ -1,7 +1,14 @@
+"use client";
+import { GetUser } from "@/app/hook/getUser";
+import { Logout } from "@/app/hook/logout";
 import Image from "next/image";
+import Link from "next/link";
 import { TfiWorld } from "react-icons/tfi";
 
 export function Header() {
+  const { user } = GetUser();
+  const { logout } = Logout();
+
   return (
     <div
       className="fixed w-full flex flex-row justify-between h-20 items-center text-center
@@ -34,18 +41,19 @@ export function Header() {
           <div className="flex items-center gap-2">
             <h1 className="text-lg font-bold">welcome</h1>
             <div>-</div>
-            <p className="underline">fulano</p>
+            <p className="underline">{user?.name}</p>
           </div>
         </div>
 
-        <div>
+        <Link href={"/"}>
           <button
+            onClick={() => logout()}
             className="text-lg px-6 py-1 bg-zinc-700 rounded-lg font-bold
                    hover:bg-zinc-600 transition-all duration-300 "
           >
             logout
           </button>
-        </div>
+        </Link>
         <div>
           <button
             className="text-lg text-[#252423] px-6 py-1 bg-[#3BC0DF] rounded-lg font-bold

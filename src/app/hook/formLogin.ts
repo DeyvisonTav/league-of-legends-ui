@@ -2,6 +2,7 @@
 import { useState, ChangeEvent } from "react";
 import api from "../service/api/axios";
 import { ZodError, z } from "zod";
+import { redirect } from "next/navigation";
 interface UserProps {
   email: string;
   password: string;
@@ -47,7 +48,10 @@ export function FormLogin() {
   }
 
   function feedbackMessageError() {
-    setFeedbackMessage("Algo deu Errado!");
+    setFeedbackMessage("Usuario não existe!");
+  }
+  function setLocalStorage(id: string) {
+    localStorage.setItem("userId", id);
   }
 
   async function handleLogin() {
@@ -56,14 +60,17 @@ export function FormLogin() {
       setIsLoading(false);
       return;
     }
+
     try {
       const email = user.email;
       const password = user.password;
 
-      await api.post("/user/authenticate", {
+      const data: any = await api.post("/user/authenticate", {
         email: email,
         password: password,
       });
+      const userId = data.data?.user?.id;
+      setLocalStorage(userId);
     } catch (err) {
       console.error(err);
       feedbackMessageError();
@@ -81,6 +88,6 @@ export function FormLogin() {
     handleLogin,
     isLoading,
     showPassword,
-    handleShowPassword
+    handleShowPassword,
   };
 }

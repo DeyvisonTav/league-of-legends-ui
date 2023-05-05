@@ -1,3 +1,6 @@
+"use client";
+import { redirect } from "next/navigation";
+import { useEffect, useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 interface ButtonProps {
   handleRegister?: () => void;
@@ -15,12 +18,21 @@ export function ButtonPlayer({
   type,
   handleRegister,
 }: ButtonProps) {
+  const id = localStorage.getItem("userId");
+
+  useEffect(() => {
+    if (id) {
+      redirect("/LandingPage");
+    } else {
+      return;
+    }
+  }, [handleLogin]);
   return (
     <div className="mt-20">
       {user.email !== "" && user.password !== "" && type === "login" ? (
         <button
           onClick={handleLogin}
-          className="py-4 px-4 flex justify-center items-center  bg-red-500
+          className="py-4 px-4 flex justify-center items-center bg-red-500
           rounded-2xl transition-all duration-300"
         >
           <AiOutlineArrowRight size={24} color="#ffff" />

@@ -39,9 +39,9 @@ export function FormInputs({
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleChangeNameRegister(e)
           }
-          placeholder="name"
+          placeholder="Name"
           className="bg-[#EDEDED] w-[18rem] py-4 rounded-md text-xs text-#AAAAAA p-3 font-bold 
-          uppercase  focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400
+            focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400
           transition-all duration-500"
         />
       )}
@@ -52,9 +52,9 @@ export function FormInputs({
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleChangeEmailRegister(e)
           }
-          placeholder="email"
+          placeholder="Email"
           className="bg-[#EDEDED] w-[18rem] py-4 rounded-md text-xs text-#AAAAAA p-3 font-bold 
-          uppercase  focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400
+            focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400
           transition-all duration-500"
         />
       )}
@@ -66,9 +66,9 @@ export function FormInputs({
             handleChangePasswordRegister(e)
           }
           type={showPasswordRegister ? "text" : "password"}
-          placeholder="password"
+          placeholder="Password"
           className="bg-[#EDEDED] w-[18rem] py-4 rounded-md text-xs text-#AAAAAA p-3 font-bold 
-          uppercase  focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400
+            focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400
           transition-all duration-500"
         />
       )}
@@ -98,9 +98,9 @@ export function FormInputs({
           onChange={(e: ChangeEvent<HTMLInputElement>) => {
             handleChangeEmail(e);
           }}
-          placeholder="email"
+          placeholder="Email"
           className="bg-[#EDEDED] w-[18rem] py-4 rounded-md text-xs text-#AAAAAA p-3 font-bold 
-          uppercase  focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400
+            focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400
           transition-all duration-500"
         />
       )}
@@ -112,9 +112,9 @@ export function FormInputs({
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleChangePassword(e)
           }
-          placeholder="password"
+          placeholder="Password"
           className="bg-[#EDEDED] w-full py-4 rounded-md text-xs text-#AAAAAA p-2  font-bold 
-          uppercase focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400
+           focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400
            transition-all duration-500"
         />
       )}
