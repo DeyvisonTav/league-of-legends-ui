@@ -81,7 +81,6 @@ export function Register() {
 
     try {
       const { name, email, password } = userRegister;
-
       await api.post("/user/register", { name, email, password });
       feedbackMessageSucess();
     } catch (err) {

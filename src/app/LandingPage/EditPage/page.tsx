@@ -1,9 +1,11 @@
 "use client";
-import { useEffect } from "react";
-import { VideoPlayerPlayNow } from "./components/video";
-import { redirect } from "next/navigation";
 import { motion } from "framer-motion";
-export default function LandingPage() {
+import { HeaderEditPage } from "./components/Header";
+import { FormContainerEditPage } from "./components/FormContainer";
+import { useEffect } from "react";
+import { redirect } from "next/navigation";
+
+export default function EditPage() {
   const id = localStorage.getItem("userId");
 
   useEffect(() => {
@@ -13,6 +15,7 @@ export default function LandingPage() {
       redirect("/");
     }
   }, [id]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,8 +23,9 @@ export default function LandingPage() {
       exit={{ opacity: 0 }}
       transition={{ delay: 0.3 }}
     >
-      <div>
-        <VideoPlayerPlayNow />
+      <div className="pt-[10rem] px-72 pb-20">
+        <HeaderEditPage />
+        <FormContainerEditPage />
       </div>
     </motion.div>
   );
