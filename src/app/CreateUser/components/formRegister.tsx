@@ -61,7 +61,7 @@ export function FormContainerRegister() {
       </div>
 
       {feedbackMessage === "Registrado com sucesso!" && (
-        <div className="mt-5 text-sm text-green-500">{feedbackMessage}</div>
+        <div className="absolute  mt-48 text-sm text-green-500">{feedbackMessage}</div>
       )}
       {feedbackMessage !== "Registrado com sucesso!" && (
         <div className=" absolute  mt-48 text-sm text-red-500">
