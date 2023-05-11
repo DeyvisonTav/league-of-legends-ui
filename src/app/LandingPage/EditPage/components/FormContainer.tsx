@@ -1,6 +1,5 @@
 import { DeletePage } from "@/app/hook/delete";
 import { UpdatePage } from "@/app/hook/update";
-import { redirect } from "next/navigation";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export function FormContainerEditPage() {

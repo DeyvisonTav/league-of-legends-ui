@@ -2,7 +2,6 @@
 import { useState, ChangeEvent } from "react";
 import api from "../service/api/axios";
 import { ZodError, z } from "zod";
-import { redirect } from "next/navigation";
 interface UserProps {
   email: string;
   password: string;
